@@ -1,23 +1,27 @@
 <h1>Reactive Form</h1>
-<form class="example-form">
+<form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
   <md-input-container class="example-full-width">
 
-    <input mdInput placeholder="First name">
+    <input mdInput placeholder="First name" formControlName="firstName">
+    <md-error *ngIf="form.get('firstName').hasError('minlength')">
+      First Name must be at least
+      <strong>{{form.get('firstName').getError('minlength').requiredLength}}</strong> characters long
+    </md-error>
 
   </md-input-container>
   <md-input-container class="example-full-width">
 
-    <input mdInput placeholder="Last Name">
+    <input mdInput placeholder="Last Name" formControlName="lastName">
 
   </md-input-container>
   <div class="example-full-width space">
 
-    <md-select placeholder="Favorite decorator">
+    <md-select placeholder="Favorite decorator" formControlName="favoriteDecorator">
       <md-option *ngFor="let decorator of decorators" [value]="decorator">
         {{ decorator }}
       </md-option>
     </md-select>
 
   </div>
-  <button md-raised-button>Submit</button>
+  <button md-raised-button [disabled]="!form.valid">Submit</button>
 </form>

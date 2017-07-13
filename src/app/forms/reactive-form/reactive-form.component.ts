@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReactiveFormComponent implements OnInit {
   decorators = ['Input', 'HostBinding', 'ContentChild'];
+  form;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      firstName: ['', Validators.minLength(2)],
+      lastName: '',
+      favoriteDecorator: ''
+    });
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(data) {
+    console.log(data);
   }
 
 }

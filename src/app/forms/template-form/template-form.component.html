@@ -2,9 +2,10 @@
 <form class="example-form" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
   <md-input-container class="example-full-width">
 
-    <input mdInput placeholder="First name" ngModel name="firstName" required #firstName="ngModel">
-    <md-error *ngIf="firstName.hasError('required')">
-      First Name is <strong>required</strong>
+    <input mdInput placeholder="First name" ngModel name="firstName" minlength="2" #firstName="ngModel">
+    <md-error *ngIf="firstName.hasError('minlength')">
+      First Name must be at least
+      <strong>{{firstName.getError('minlength').requiredLength}}</strong> characters long
     </md-error>
 
   </md-input-container>
