@@ -4,17 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdInputModule, MdSelectModule } from '@angular/material';
+import { SharedModule } from './forms/shared.module';
+import { SignUpFormComponent } from './sign-up-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignUpFormComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MdInputModule,
     MdButtonModule,
-    MdSelectModule
+    MdSelectModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

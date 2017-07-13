@@ -1,0 +1,26 @@
+<h1>Template Form</h1>
+<form class="example-form" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <md-input-container class="example-full-width">
+
+    <input mdInput placeholder="First name" ngModel name="firstName" required #firstName="ngModel">
+    <md-error *ngIf="firstName.hasError('required')">
+      First Name is <strong>required</strong>
+    </md-error>
+
+  </md-input-container>
+  <md-input-container class="example-full-width">
+
+    <input mdInput placeholder="Last Name" ngModel name="lastName">
+
+  </md-input-container>
+  <div class="example-full-width space">
+
+    <md-select placeholder="Favorite decorator" ngModel name="favoriteDecorator">
+      <md-option *ngFor="let decorator of decorators" [value]="decorator">
+        {{ decorator }}
+      </md-option>
+    </md-select>
+
+  </div>
+  <button md-raised-button [disabled]="!form.valid">Submit</button>
+</form>

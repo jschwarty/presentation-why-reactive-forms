@@ -1,0 +1,23 @@
+<h1>Reactive Form</h1>
+<form class="example-form">
+  <md-input-container class="example-full-width">
+
+    <input mdInput placeholder="First name">
+
+  </md-input-container>
+  <md-input-container class="example-full-width">
+
+    <input mdInput placeholder="Last Name">
+
+  </md-input-container>
+  <div class="example-full-width space">
+
+    <md-select placeholder="Favorite decorator">
+      <md-option *ngFor="let decorator of decorators" [value]="decorator">
+        {{ decorator }}
+      </md-option>
+    </md-select>
+
+  </div>
+  <button md-raised-button>Submit</button>
+</form>
