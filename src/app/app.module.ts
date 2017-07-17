@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdButtonModule, MdInputModule, MdSelectModule } from '@angular/material';
 import { SharedModule } from './forms/shared.module';
 import { SignUpFormComponent } from './sign-up-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,8 @@ import { SignUpFormComponent } from './sign-up-form.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MdInputModule,
     MdButtonModule,
     MdSelectModule,
