@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
       <md-input-container class="example-full-width">
 
         <input mdInput placeholder="First name">
+        <md-error>
+          First Name must be at least
+          <strong></strong> characters long
+        </md-error>
 
       </md-input-container>
       <md-input-container class="example-full-width">
