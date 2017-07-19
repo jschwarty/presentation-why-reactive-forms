@@ -23,5 +23,8 @@
     </md-select>
 
   </div>
+  <div class="example-full-width space">
+      <app-contact-info [group]="form.get('contactInfo')"></app-contact-info>
+  </div>
   <button md-raised-button [disabled]="!form.valid">Submit</button>
 </form>

@@ -4,6 +4,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { MdButtonModule, MdInputModule, MdSelectModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactInfoComponent } from './reactive-form/contact-info.component';
 
 @NgModule({
   imports: [
@@ -16,11 +17,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   declarations: [
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ContactInfoComponent
   ],
   exports: [
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ContactInfoComponent
   ]
 })
 export class SharedModule { }

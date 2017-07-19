@@ -4,6 +4,7 @@ import { ReactiveFormComponent } from './reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MdButtonModule, MdInputModule, MdSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactInfoComponent } from './contact-info.component';
 
 describe('ReactiveFormComponent', () => {
   let component: ReactiveFormComponent;
@@ -18,7 +19,7 @@ describe('ReactiveFormComponent', () => {
         MdButtonModule,
         MdSelectModule
       ],
-      declarations: [ReactiveFormComponent]
+      declarations: [ReactiveFormComponent, ContactInfoComponent]
     })
       .compileComponents();
   }));
@@ -35,12 +36,6 @@ describe('ReactiveFormComponent', () => {
   });
 
   describe('first name field', () => {
-    it('should be valid when set to long enough string', () => {
-      const firstName = component.form.get('firstName');
-      firstName.setValue('test');
-      expect(firstName.valid).toBeTruthy();
-    });
-
     it('should be invalid when set to string that is too short', () => {
       const firstName = component.form.get('firstName');
       firstName.setValue('a');

@@ -14,7 +14,11 @@ export class ReactiveFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       firstName: ['', Validators.minLength(2)],
       lastName: '',
-      favoriteDecorator: ''
+      favoriteDecorator: '',
+      contactInfo: this.formBuilder.group({
+        email: '',
+        phone: ''
+      })
     });
   }
 
